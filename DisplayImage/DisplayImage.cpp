@@ -4,28 +4,30 @@
 using namespace std;
 using namespace cv;
 
-int main(int argc, char** argv)
-{
- // Read the image file
- Mat image = imread("../DisplayImage/guitar.png");
+int main() {
+  // Read the image file
+  Mat image = imread("../DisplayImage/guitar.png");
 
- // Check for failure
- if (image.empty())
- {
-  cout << "Could not open or find the image" << endl;
-  cin.get(); //wait for any key press
-  return -1;
- }
+  // Check for failure
+  if (image.empty()) {
+    cout << "Could not open or find the image" << endl;
+    cin.get(); //wait for any key press
+    return -1;
+  }
 
- String windowName = "The Guitar"; //Name of the window
+  // name the window
+  String windowName = "The Guitar";
 
- namedWindow(windowName); // Create a window
+  // create window instance
+  namedWindow(windowName);
 
- imshow(windowName, image); // Show our image inside the created window.
+  // show the image inside the window
+  imshow(windowName, image);
 
- waitKey(0); // Wait for any keystroke in the window
+  // Wait for any keystroke in the window
+  waitKey(0);
 
- destroyWindow(windowName); //destroy the created window
-
- return 0;
+  // destroy the window
+  destroyWindow(windowName);
+  return 0;
 }
